@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/fragments/header::header}"></div>
+<body>
+	<div class="container_form">
+		<h1 class="title_form" th:text="${titre}"></h1>
+
+		<div class="form_custom">
+			<form th:action="@{/emprunt/update}" th:object="${emprunt}"
+				method="post">
+
+				<input type="hidden" th:field="*{id}"> <label>date
+					de debut : </label> <input type="text" th:field="*{datedebut}"> <label>date
+					de fin: </label> <input type="text" th:field="*{datefin}"> <label>date
+					de debut : </label> <input type="text" th:field="*{delai}">
+				<select th:field="*{clientEmprunt}">
+					<option th:each="c : ${clients}" th:text=${c.nom}
+						th:value="${c.id}">
+				</select> <select th:field="*{livresE}">
+					<option th:each="l : ${livres}" th:text=${l.titre}
+						th:value="${l.id}">
+				</select> 
+				<input class="btn_validate" type="submit" value="valider"> 
+				<a class="link_return" th:href="@{/emprunt/emprunts}">retour</a>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

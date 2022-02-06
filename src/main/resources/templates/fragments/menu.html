@@ -1,0 +1,16 @@
+
+<menu th:fragment="menu">
+	<ul>
+	<a th:text=#{menu_add}  class="add_element" th:href="@{${chemin_add}}">ajouter</a>
+	
+		<a th:href="@{/livre/livres}"><li th:text=#{title_listbook}></li></a>
+		<a th:href="@{/emprunt/emprunts}"><li th:text=#{title_listloan}></li></a>
+		<a th:href="@{/client/clients}"><li th:text=#{title_listclient} ></li></a>
+		
+		<a th:href="@{/livre/livres?language=fr}"><li>FR</li></a>
+		<a th:href="@{/livre/livres?language=en}"><li>EN</li></a>
+		<a th:href="@{/livre/livres?language=es}"><li>ES</li></a>
+	</ul>
+</menu>
+
+	

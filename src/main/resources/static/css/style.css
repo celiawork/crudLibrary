@@ -1,0 +1,199 @@
+/*GENERAL*/
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+*, ::before, ::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: Noto Sans, sans-serif, Roboto, Helvetica, sans-serif;
+	background-color: #FAFAFA;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	display: grid;
+	width: 100%;
+	height: 100vh;
+	grid-template-columns: 15% 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: 'menu_nav title title' 'menu_nav list list'
+		'menu_nav list list';
+}
+
+.title {
+	color: #091540;
+	grid-area: title;
+	place-self: center;
+}
+
+/*MENU*/
+menu {
+	background-color: #63768d;
+	grid-area: menu_nav;
+	display: grid;
+	align-items: center;
+	height: 100%;
+}
+
+ul {
+	display: grid;
+	margin-left: 50px;
+	list-style-type: none;
+	align-content: space-between;
+}
+
+li {
+	padding: 30px 0;
+	color: white;
+}
+
+.add_element {
+	background-color: #5DA9E9;
+	color: rgb(49, 48, 48);
+	font-weight: bold;
+	padding: 20px 100px;
+	box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -9px 10px 5px 0px rgba(0, 0, 0, 0.75);
+	margin-bottom: 140px;
+}
+
+/*TABLE LIST*/
+.table_list {
+	background-color: white;
+	grid-area: list;
+	width: 80%;
+	height: 80%;
+	justify-self: center;
+	margin: 0 auto;
+	border-radius: 10px;
+	box-shadow: -1px 3px 41px -15px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: -1px 3px 41px -15px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: -1px 3px 41px -15px rgba(0, 0, 0, 0.75);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	table-layout: auto;
+}
+
+.list_th {
+	background-color: #8CBCB9;
+	height: 70px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+td {
+	text-align: center;
+}
+
+.list_book_loan {
+	color: black;
+}
+
+/*FORM ADD*/
+.container_form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 200px 1fr 1fr;
+	grid-template-areas: 'title' 'form';
+	justify-items: center;
+	align-content: center;
+	height: 100vh;
+	background-image: linear-gradient(112.5deg, rgb(214, 214, 214) 0%,
+		rgb(214, 214, 214) 10%, rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,
+		rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%, rgb(157, 157, 157) 55%,
+		rgb(157, 157, 157) 60%, rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,
+		rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%, rgb(99, 99, 99) 91%,
+		rgb(99, 99, 99) 100%), linear-gradient(157.5deg, rgb(214, 214, 214) 0%,
+		rgb(214, 214, 214) 10%, rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,
+		rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%, rgb(157, 157, 157) 55%,
+		rgb(157, 157, 157) 60%, rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,
+		rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%, rgb(99, 99, 99) 91%,
+		rgb(99, 99, 99) 100%), linear-gradient(135deg, rgb(214, 214, 214) 0%,
+		rgb(214, 214, 214) 10%, rgb(195, 195, 195) 10%, rgb(195, 195, 195) 53%,
+		rgb(176, 176, 176) 53%, rgb(176, 176, 176) 55%, rgb(157, 157, 157) 55%,
+		rgb(157, 157, 157) 60%, rgb(137, 137, 137) 60%, rgb(137, 137, 137) 88%,
+		rgb(118, 118, 118) 88%, rgb(118, 118, 118) 91%, rgb(99, 99, 99) 91%,
+		rgb(99, 99, 99) 100%), linear-gradient(90deg, rgb(195, 195, 195),
+		rgb(228, 228, 228));
+	background-blend-mode: overlay, overlay, overlay, normal;
+}
+
+.title_form {
+	grid-area: title;
+	place-self: center;
+}
+
+form {
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form_custom input, select {
+	margin-bottom: 40px;
+	height: 40px;
+	line-height: 28px;
+	padding: 8px 16px;
+	width: 100%;
+	min-height: 44px;
+	border: unset;
+	border-radius: 4px;
+	outline-color: rgb(84 105 212/ 0.5);
+	border-bottom: 1px solid #63768d;
+}
+
+/*BUTTON*/
+.btn_validate {
+	width: 100%;
+	background-color: #091540;
+	color: white;
+	font-size: 16px;
+}
+
+.btn_validate:hover {
+	background-color: #5DA9E9;
+	cursor: pointer;
+}
+
+.link_return {
+	color: #5DA9E9;
+	font-weight: bolder;
+}
+
+.btn_delete {
+	color: #FFFFFF;
+	font-size: 17px;
+	font-weight: 100;
+	padding: 1px 6px;
+	background-color: #CA383D;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.btn_update {
+
+	font-size: 17px;
+	font-weight: bolder;
+	color:black;
+	cursor: pointer;
+
+}

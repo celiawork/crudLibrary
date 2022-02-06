@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<div th:replace="~{/fragments/header::header}"></div>
+<body>
+	<div class="container">
+
+		<h1 class="title" th:text="#{title_listloan}"></h1>
+
+		<div th:replace="~{/fragments/menu::menu}"></div>
+
+		<div class="table_list">
+			<table>
+				<thead>
+					<tr class="list_th">
+						<th th:text="#{lastname}"></th>
+						<th th:text="#{firstname}"></th>
+						<th th:text="#{start_date}"></th>
+						<th th:text="#{end_date}"></th>
+						<th th:text="#{time_limit}"></th>
+						<th th:text="#{borrowed_book}"></th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="emp : ${emprunts}">
+						<td th:text="${emp.clientEmprunt.nom}"></td>
+						<td th:text="${emp.clientEmprunt.prenom}"></td>
+						<td th:text="${#dates.format(emp.datedebut, 'dd-MMM-yyyy')}"></td>
+						<td th:text="${#dates.format(emp.datefin,'dd-MMM-yyyy')}"></td>
+						<td th:text="${emp.delai}"></td>
+						<td>
+							<div th:each=" liv: ${empr.findByLivre(emp)}">
+								<li class="list_book_loan" th:each="li : ${liv}"
+									th:text="${li.titre}"></li>
+							</div>
+						</td>
+
+						<td><a th:text=#{update} class="btn_update"
+							th:href="@{/emprunt/update/{id}(id=${emp.id})}">modifier</a></td>
+						<td><a th:text=#{delete} class="btn_delete"
+							th:href="@{/emprunt/delete/{id}(id=${emp.id})}">supprimer</a></td>
+
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
